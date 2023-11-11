@@ -1,16 +1,20 @@
 <template lang="">
     <div class="options-container">
         <ul>
-            <li>Charmander</li>
-            <li>Bulbasaur</li>
-            <li>Squirtle</li>
-            <li>Pikachu</li>
+            <li v-for="pokemon in pokemons" :key="pokemon.id">
+                {{ pokemon.name.toUpperCase() }}
+            </li>
         </ul>
     </div>
 </template>
 <script>
 export default {
-
+    props: {
+        pokemons: {
+            type: Array,
+            required: true
+        }
+    }
 }
 </script>
 <style scoped>
