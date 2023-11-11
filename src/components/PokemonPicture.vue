@@ -1,12 +1,28 @@
 <template lang="">
     <div class="pokemon-container">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" class="hidden-pokemon" alt="Pokemon">
-        <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/1.svg" class="fade-in" alt="Pokemon">
+        <img :src="imgSrc" class="hidden-pokemon" alt="Pokemon">
+        <img v-if="showPokemon" :src="imgSrc" class="fade-in" alt="Pokemon">
     </div>
 </template>
 <script>
 export default {
-
+    // Props are used to pass data from parent to child components
+    props: {
+        pokemon_id:{
+            type: Number,
+            required: true
+        },
+        showPokemon:{
+            type: Boolean,
+            required: true,
+            default: false
+        }
+    },
+    computed:{
+        imgSrc(){
+            return `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/dream-world/${this.pokemon_id}.svg`;
+        }
+    }
 }
 </script>
 <style scoped>

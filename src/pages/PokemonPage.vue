@@ -1,7 +1,7 @@
 <template lang="es">
     <h1>Quien es este pokemon?</h1>
 
-    <PokemonPicture />
+    <PokemonPicture :pokemon_id="151" :showPokemon="true" /> <!-- : for numbers -->
 
     <PokemonOptions />
 </template>
