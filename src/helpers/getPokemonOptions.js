@@ -4,7 +4,7 @@ import pokemonApi from "@/api/pokemonApi";
  * Returns an array of numbers representing the Pokemons available in the game.
  * @returns {number[]} An array of numbers representing the Pokemons available in the game.
  */
-const getPokemons = () => {
+export const getPokemons = () => {
     const pokemonsArr = Array.from(Array(650));
 
     return pokemonsArr.map((_, index) => index + 1);
@@ -29,7 +29,7 @@ const getPokemonOptions = async () => {
  * @param {Array} [pokemonIds=[]] - An array of four pokemon ids.
  * @returns {Promise<Array>} - A promise that resolves to an array of four objects containing the name and id of each pokemon.
  */
-const getPokemonNames = async ([a, b, c, d] = []) => {
+export const getPokemonNames = async ([a, b, c, d] = []) => {
     // const {data} =  await pokemonApi.get(`/1`);
     // console.log(data.id, data.name);
 
